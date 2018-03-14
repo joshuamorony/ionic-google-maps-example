@@ -65,7 +65,7 @@ var HomePage = (function () {
     ], HomePage.prototype, "mapComponent", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/joshuamorony/Documents/apps/ionic/ionic-google-maps-example/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Ionic/Capacitor Google Maps\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n	<google-map apiKey="AIzaSyAoHpxwPYh8cX8erMc3vuuS-2NgvMcIhr0"></google-map>\n\n</ion-content>\n\n<ion-footer>\n	<button ion-button color="light" full (click)="testMarker()">Test Marker</button>\n</ion-footer>'/*ion-inline-end:"/Users/joshuamorony/Documents/apps/ionic/ionic-google-maps-example/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/joshuamorony/Documents/apps/ionic/ionic-google-maps-example/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Ionic/Capacitor Google Maps\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n\n	<google-map apiKey="YOUR_GOOGLE_API_KEY"></google-map>\n\n</ion-content>\n\n<ion-footer>\n	<button ion-button color="light" full (click)="testMarker()">Test Marker</button>\n</ion-footer>'/*ion-inline-end:"/Users/joshuamorony/Documents/apps/ionic/ionic-google-maps-example/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], HomePage);
@@ -146,7 +146,6 @@ var GoogleMapComponent = (function () {
                     else {
                         if (_this.networkHandler == null) {
                             _this.networkHandler = Network.addListener('networkStatusChange', function (status) {
-                                console.log(status);
                                 if (status.connected) {
                                     _this.networkHandler.remove();
                                     _this.init().then(function (res) {
@@ -156,7 +155,6 @@ var GoogleMapComponent = (function () {
                                     });
                                 }
                             });
-                            console.log(_this.networkHandler);
                         }
                         reject('Not online');
                     }
@@ -170,7 +168,6 @@ var GoogleMapComponent = (function () {
                         });
                     }
                     else {
-                        //window.addEventListener('online',  updateIndicator);
                         reject('Not online');
                     }
                 });
