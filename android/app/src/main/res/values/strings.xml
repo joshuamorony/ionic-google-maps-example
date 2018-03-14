@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">GMaps</string>
-    <string name="title_activity_main">GMaps</string>
-    <string name="package_name">com.joshmorony.mapsexample</string>
-    <string name="fileprovider_authority">com.joshmorony.mapsexample.fileprovider</string>
-    <string name="custom_url_scheme">com.joshmorony.mapsexample</string>
-</resources>
