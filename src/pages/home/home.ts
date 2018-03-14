@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { GoogleMapComponent } from '../../components/google-map/google-map';
 
 @Component({
   selector: 'page-home',
@@ -7,8 +7,17 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+	@ViewChild(GoogleMapComponent) mapComponent: GoogleMapComponent;
 
-  }
+	constructor() {
+
+	}
+
+	testMarker(){
+
+		let center = this.mapComponent.map.getCenter();
+		this.mapComponent.addMarker(center.lat(), center.lng());
+
+	}
 
 }
